@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ACCT2019 – AI & Management Accounting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            scroll-behavior: smooth;
+            font-family: Verdana, sans-serif;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 5rem 5%;
+        }
+
+        .chain::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #005eb8;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        .chain-item {
+            z-index: 1;
+            position: relative;
+            cursor: pointer;
+            border: 2px solid #005eb8;
+            background: white;
+            color: #005eb8;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .chain-item:hover {
+            transform: scale(1.05);
+        }
+
+        .active-link {
+            background: #005eb8 !important;
+            color: white !important;
+        }
+
+        .flip-card {
+            perspective: 1000px;
+        }
+
+        .flip-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .flip-card:hover .flip-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-front,
+        .flip-back {
+            backface-visibility: hidden;
+            position: absolute;
+            inset: 0;
+            border-radius: 0.75rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .flip-back {
+            transform: rotateY(180deg);
+            background: #009999;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-gray-800">
+
+    <!-- Sidebar Chain Navigation -->
+    <aside
+        class="fixed top-0 left-0 h-full w-60 bg-white shadow-lg flex flex-col items-center overflow-y-auto chain z-50">
+        <h1 class="text-lg font-bold mt-6 mb-8 text-[#005eb8]"></h1>
+        <nav id="sidebar-nav" class="flex flex-col items-center space-y-6 w-full px-4 pb-8">
+            <div data-target="cover" class="chain-item py-3 px-4 rounded-xl w-full">Cover</div>
+            <div data-target="impact" class="chain-item py-3 px-4 rounded-xl w-full">Impact</div>
+            <div data-target="critical" class="chain-item py-3 px-4 rounded-xl w-full">Critical</div>
+            <div data-target="role" class="chain-item py-3 px-4 rounded-xl w-full">Role</div>
+            <div data-target="value" class="chain-item py-3 px-4 rounded-xl w-full">Value</div>
+            <div data-target="skills" class="chain-item py-3 px-4 rounded-xl w-full">Skills</div>
+            <div data-target="students" class="chain-item py-3 px-4 rounded-xl w-full">Students</div>
+            <div data-target="risks" class="chain-item py-3 px-4 rounded-xl w-full">Risks</div>
+            <div data-target="backlash" class="chain-item py-3 px-4 rounded-xl w-full">Backlash</div>
+            <div data-target="cfo" class="chain-item py-3 px-4 rounded-xl w-full">CFO</div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64">
+
+        <!-- Cover -->
+        <section id="cover"
+            class="flex flex-col justify-center items-center bg-gradient-to-br from-[#005eb8] to-[#009999] text-white text-center"
+            data-aos="zoom-in">
+            <h1 class="text-5xl font-bold mb-6">AI and the Future of Management Accounting</h1>
+            <p class="text-lg mb-8">ACCT2019 Group Assignment — Semester 2, 2025</p>
+            <div class="grid md:grid-cols-3 gap-6 w-full max-w-4xl">
+                <div class="bg-white text-[#005eb8] p-4 rounded-xl shadow">Student A<br>SID<br>Email</div>
+                <div class="bg-white text-[#005eb8] p-4 rounded-xl shadow">Student B<br>SID<br>Email</div>
+                <div class="bg-white text-[#005eb8] p-4 rounded-xl shadow">Student C<br>SID<br>Email</div>
+            </div>
+            <button onclick="document.getElementById('impact').scrollIntoView({behavior:'smooth'})"
+                class="mt-8 px-6 py-3 bg-white text-[#005eb8] rounded-xl shadow hover:scale-105 transition">
+                ▶ Start Presentation
+            </button>
+        </section>
+
+        <!-- Impact -->
+        <section id="impact" data-aos="fade-up">
+            <div class="bg-white shadow-lg p-6 rounded-xl mb-6">
+                <h3 class="font-bold text-xl mb-3 text-[#005eb8]">Expanded Analysis: Impact of AI on Managerial
+                    Accounting
+                </h3>
+                <p class="mb-4">
+                    Artificial Intelligence (AI) is re-shaping the role of managerial accounting by
+                    fundamentally altering both the processes accountants follow and the expectations
+                    placed upon them by organisations. Traditionally, managerial accounting relied on
+                    retrospective reporting — analysing variance after the fact, preparing static budgets,
+                    and providing lagging performance indicators. AI disrupts this paradigm by enabling
+                    real-time analysis and predictive modelling, which in turn allows managers to make
+                    faster and more informed decisions.
+                </p>
+                <p class="mb-4">
+                    One of the most significant operational impacts is the automation of routine
+                    tasks. Functions like variance analysis, reconciliations, and repetitive forecasting
+                    processes are increasingly delegated to machine learning algorithms and robotic
+                    process automation (RPA). This not only reduces cycle times and the likelihood of
+                    human error, but also frees accountants to focus on higher-value activities. On a
+                    strategic level, AI tools empower organisations to conduct scenario analysis across
+                    multiple variables simultaneously, providing insights that would be too complex
+                    or time-consuming to generate manually.
+                </p>
+                <div class="bg-slate-100 border-l-4 border-[#009999] p-4 rounded mb-4">
+                    <h4 class="font-bold mb-2">Case Study: Unilever</h4>
+                    <p>
+                        Unilever has implemented AI-driven demand forecasting models that integrate
+                        external data such as weather patterns, social media trends, and economic indicators.
+                        This system improved forecast accuracy by more than 20%, reduced waste in
+                        production scheduling, and provided finance teams with a stronger basis for
+                        capital allocation. The case illustrates how AI is not just improving efficiency,
+                        but also enabling strategic agility in financial planning.
+                    </p>
+                </div>
+                <p class="mb-4">
+                    However, these benefits are not automatic. The success of AI integration is contingent
+                    on strong data governance frameworks, robust IT infrastructure, and effective human
+                    oversight. Without these, AI can introduce risks of bias, misinterpretation, or
+                    overconfidence in model outputs. For accountants, this highlights the dual challenge:
+                    to master the technical aspects of AI tools while also exercising professional judgment
+                    to validate and contextualise their results.
+                </p>
+                <div
+                    class="bg-gradient-to-r from-[#005eb8] to-[#009999] text-white p-4 rounded-xl shadow text-center italic">
+                    “AI transforms managerial accounting from a backward-looking reporting function
+                    into a forward-looking decision enabler — but only when accountants actively guide
+                    its application with ethical judgment and contextual insight.”
+                </div>
+            </div>
+
+            </div>
+        </section>
+
+
+        <!-- Critical -->
+        <section id="critical" data-aos="fade-up">
+            <div class="bg-white shadow-lg p-6 rounded-xl mb-6">
+                <h3 class="font-bold text-xl mb-3 text-[#005eb8]">Expanded Critical Evaluation: Successes and
+                    Failures
+                    of AI
+                    in Accounting</h3>
+
+                <p class="mb-4">
+                    While AI promises transformative benefits for management accounting, its adoption is
+                    not universally positive. A critical evaluation requires examining both successful
+                    integrations and high-profile failures to identify the conditions under which AI
+                    delivers genuine value. Success depends on strong data foundations, ethical oversight,
+                    and clear role definitions for human accountants. Failure tends to arise when these
+                    elements are missing, resulting in costly errors and organisational distrust.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                        <h4 class="font-bold mb-2">✅ Example of Success: Walmart</h4>
+                        <p>
+                            Walmart deployed AI to optimise inventory forecasting across thousands of
+                            stores. By integrating point-of-sale data with external factors such as local
+                            events and weather, the system reduced stock-outs by 30% and increased supply
+                            chain responsiveness. Importantly, managers retained oversight — AI was treated
+                            as a decision-support tool, not a decision-maker. This illustrates that human
+                            judgment combined with AI insights produces reliable outcomes.
+                        </p>
+                    </div>
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                        <h4 class="font-bold mb-2">❌ Example of Failure: Knight Capital</h4>
+                        <p>
+                            In 2012, Knight Capital lost $440 million in just 45 minutes after a trading
+                            algorithm malfunctioned. While not managerial accounting per se, the case is
+                            instructive: lack of oversight and weak testing protocols allowed an automated
+                            system to operate unchecked, with catastrophic results. It underscores that
+                            blind trust in AI without governance can erode both financial stability and
+                            stakeholder confidence.
+                        </p>
+                    </div>
+                </div>
+
+                <p class="mb-4">
+                    These contrasting examples highlight a key principle: AI’s success in accounting is
+                    not determined by the technology itself, but by how organisations design their
+                    processes around it. Where there is transparency, accountability, and ongoing
+                    validation, AI enhances efficiency and insight. Where these safeguards are absent,
+                    AI magnifies risk rather than reducing it.
+                </p>
+
+                <!-- Chart for Success vs Failure Drivers -->
+                <div class="bg-white shadow p-4 rounded-xl mb-6">
+                    <h4 class="font-bold text-lg mb-2 text-[#009999]">Success vs Failure Drivers</h4>
+                    <canvas id="criticalEvalChart" height="120"></canvas>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Visualising the relative weight of success factors (strong data, oversight,
+                        transparency, change management) against failure risks (bias, opacity, poor
+                        governance). Success is contingent on balance across all four drivers.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-gradient-to-r from-[#005eb8] to-[#009999] text-white p-4 rounded-xl shadow text-center italic">
+                    “AI is neither inherently good nor bad for accounting — its value depends on
+                    governance, ethics, and the judgment of professionals who interpret its outputs.”
+                </div>
+            </div>
+            <canvas id="criticalEvalChart" height="120"></canvas>
+        </section>
+
+        <!-- Role -->
+        <!-- Role -->
+        <section id="role" data-aos="fade-up">
+            <div class="bg-white shadow-lg p-6 rounded-xl mb-6">
+                <h2 class="text-3xl font-bold text-[#005eb8] mb-6">👤 Rethinking the Role of Management Accountants</h2>
+
+                <p class="mb-6">
+                    The evolution of the accountant’s role can be mapped across decades. What began as
+                    <span class="font-bold text-red-600">transactional book-keeping</span> has moved through
+                    <span class="font-bold text-yellow-600">analytical ERP-driven processes</span> toward
+                    <span class="font-bold text-green-600">strategic, AI-supported leadership</span>.
+                    Growth has not been linear — it has been noisy, with periods of disruption (ERP systems,
+                    cloud computing, and now AI) driving exponential leaps in impact.
+                </p>
+
+                <!-- Line chart with milestones -->
+                <div class="bg-white shadow p-4 rounded-xl mb-6">
+                    <h4 class="font-bold text-lg mb-2 text-[#009999]">Timeline of Role Evolution</h4>
+                    <canvas id="roleTimelineChart" height="140"></canvas>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Hover over milestones to see how the accountant’s role has shifted with each technological
+                        disruption.
+                    </p>
+                </div>
+
+                <!-- Reflection -->
+                <div
+                    class="bg-gradient-to-r from-[#005eb8] to-[#009999] text-white p-4 rounded-xl shadow text-center italic">
+                    “The accountant’s role has grown exponentially in strategic importance —
+                    with AI marking the steepest inflection point in decades.”
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Value -->
+        <!-- Value -->
+        <section id="value" data-aos="fade-up"
+            class="bg-gradient-to-br from-[#005eb8] to-[#009999] text-white py-16 px-8">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold mb-10 text-center">💎 Value Proposition Shift</h2>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <!-- Left: Vertical Cards -->
+                    <div class="flex flex-col space-y-6 md:w-1/3">
+                        <div class="bg-white text-[#005eb8] font-bold rounded-xl shadow-lg p-6 text-center">
+                            📊 Transaction
+                            <p class="text-sm text-gray-600 mt-2 font-normal">Recording & compliance</p>
+                        </div>
+                        <div class="bg-white text-[#005eb8] font-bold rounded-xl shadow-lg p-6 text-center">
+                            🔎 Analysis
+                            <p class="text-sm text-gray-600 mt-2 font-normal">Explaining trends</p>
+                        </div>
+                        <div class="bg-white text-[#005eb8] font-bold rounded-xl shadow-lg p-6 text-center">
+                            🚀 Strategy
+                            <p class="text-sm text-gray-600 mt-2 font-normal">Shaping choices</p>
+                        </div>
+                        <div class="bg-white text-[#005eb8] font-bold rounded-xl shadow-lg p-6 text-center">
+                            ⚖️ Ethics
+                            <p class="text-sm text-gray-600 mt-2 font-normal">Safeguarding trust</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Succinct Explanations -->
+                    <div class="bg-white text-gray-800 rounded-xl shadow-xl p-8 flex-1">
+                        <h3 class="text-2xl font-semibold text-[#005eb8] mb-4">From Records → Insight → Strategy</h3>
+                        <ul class="list-disc ml-5 space-y-2">
+                            <li><span class="font-bold">Transaction:</span> Past-focused, ensuring accuracy and
+                                compliance.</li>
+                            <li><span class="font-bold">Analysis:</span> Turning numbers into patterns and insights.
+                            </li>
+                            <li><span class="font-bold">Strategy:</span> Partnering with leaders to drive future
+                                outcomes.</li>
+                            <li><span class="font-bold">Ethics:</span> Protecting trust, transparency, and
+                                accountability in AI use.</li>
+                        </ul>
+                        <p class="mt-6 text-gray-700">
+                            This progression illustrates accounting’s move from being <em>record-keepers</em> to
+                            <em>strategic partners</em>,
+                            with ethics anchoring trust in an AI-driven environment.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Chart -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mt-10">
+                    <h4 class="font-bold text-lg text-[#009999] mb-3">Shifting Emphasis Across Value Dimensions</h4>
+                    <canvas id="valueChart" height="120"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            new Chart(document.getElementById('valueChart'), {
+                type: 'line',
+                data: {
+                    labels: ["1990", "2000", "2010", "2020", "2030"],
+                    datasets: [
+                        { label: "Transaction", data: [90, 70, 50, 30, 20], borderColor: "#005eb8", fill: false, tension: 0.3 },
+                        { label: "Analysis", data: [40, 60, 70, 65, 50], borderColor: "#ff8c00", fill: false, tension: 0.3 },
+                        { label: "Strategy", data: [10, 20, 40, 60, 80], borderColor: "#009999", fill: false, tension: 0.3 },
+                        { label: "Ethics", data: [5, 10, 15, 30, 60], borderColor: "#aa33cc", fill: false, tension: 0.3 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'top' },
+                        title: { display: true, text: 'Evolution of Accountant Value Proposition (1990–2030)' }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, max: 100, title: { display: true, text: 'Relative Emphasis (%)' } },
+                        x: { title: { display: true, text: 'Year' } }
+                    }
+                }
+            });
+        </script>
+
+
+        <!-- Skills -->
+        <section id="skills" data-aos="fade-up" class="bg-slate-50 py-16 px-8">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-[#005eb8] mb-12 text-center">📚 Skills & Competencies</h2>
+
+                <!-- Two mirror cards -->
+                <div class="grid md:grid-cols-2 gap-12 items-stretch">
+
+                    <!-- SVG Triangle Diagram -->
+                    <div class="bg-white shadow-lg rounded-xl p-6 flex items-center justify-center">
+                        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" class="w-full h-[350px]">
+                            <!-- Triangle lines -->
+                            <line x1="200" y1="60" x2="80" y2="320" stroke="#009999" stroke-width="3" />
+                            <line x1="200" y1="60" x2="320" y2="320" stroke="#005eb8" stroke-width="3" />
+                            <line x1="80" y1="320" x2="320" y2="320" stroke="#ff8c00" stroke-width="3" />
+
+                            <!-- Top circle -->
+                            <circle cx="200" cy="100" r="80" fill="#005eb8" />
+                            <text x="200" y="100" text-anchor="middle" dominant-baseline="middle" fill="white"
+                                font-size="13" font-weight="bold">
+                                Ethics &amp; Governance
+                            </text>
+
+                            <!-- Bottom-left circle -->
+                            <circle cx="80" cy="320" r="80" fill="#009999" />
+                            <text x="80" y="320" text-anchor="middle" dominant-baseline="middle" fill="white"
+                                font-size="13" font-weight="bold">
+                                Analytics &amp; AI
+                            </text>
+
+                            <!-- Bottom-right circle -->
+                            <circle cx="320" cy="320" r="80" fill="#ff8c00" />
+                            <text x="320" y="320" text-anchor="middle" dominant-baseline="middle" fill="white"
+                                font-size="13" font-weight="bold">
+                                Communication
+                            </text>
+                        </svg>
+                    </div>
+
+                    <!-- Radar Chart -->
+                    <div class="bg-white shadow-lg rounded-xl p-6 flex flex-col justify-center">
+                        <canvas id="skillsChart" class="w-full h-[500px]"></canvas>
+                    </div>
+                </div>
+
+                <!-- Legend box (shared) -->
+                <div class="mt-8 bg-white shadow rounded-xl p-6 text-center">
+                    <h5 class="text-md font-bold mb-3 text-[#005eb8]">Legend</h5>
+                    <div class="flex justify-center gap-8 flex-wrap">
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[#005eb8]"></span>
+                            <span>Ethics & Governance</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[#009999]"></span>
+                            <span>Analytics & AI</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-5 h-5 rounded-full bg-[#ff8c00]"></span>
+                            <span>Communication</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            new Chart(document.getElementById('skillsChart'), {
+                type: 'radar',
+                data: {
+                    labels: ["", "", ""],
+                    datasets: [
+                        {
+                            label: "Today",
+                            data: [60, 70, 50],
+                            borderColor: "#005eb8",
+                            backgroundColor: "rgba(0,94,184,0.2)",
+                            borderWidth: 2,
+                            pointBackgroundColor: ["#005eb8", "#ff8c00", "#009999"],
+                            pointBorderColor: ["#005eb8", "#ff8c00", "#009999"],
+                            pointRadius: 6,
+                            pointHoverRadius: 10
+                        },
+                        {
+                            label: "2030",
+                            data: [90, 85, 80],
+                            borderColor: "#009999",
+                            backgroundColor: "rgba(0,153,153,0.2)",
+                            borderWidth: 2,
+                            pointBackgroundColor: ["#005eb8", "#ff8c00", "#009999"],
+                            pointBorderColor: ["#005eb8", "#ff8c00", "#009999"],
+                            pointRadius: 6,
+                            pointHoverRadius: 10
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: true },
+                    },
+                    scales: {
+                        r: {
+                            min: 0,
+                            max: 120,
+                            ticks: { stepSize: 20 }
+                        }
+                    }
+                }
+            });
+        </script>
+
+
+
+
+
+
+
+        <!-- Students -->
+        <section id="students" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-[#005eb8] mb-6">🎓 Preparing as Students</h2>
+            <p class="mb-4">Our 12-month roadmap ensures readiness for AI-driven roles:</p>
+            <ul class="list-disc ml-5 mb-4 space-y-1">
+                <li>Q4 2025: Conduct skills audit (identify gaps in coding, analytics).</li>
+                <li>Q1 2026: Undertake tool-based projects (Python, Power BI).</li>
+                <li>Q2 2026: Build applied case studies showcasing AI in decisions.</li>
+            </ul>
+            <canvas id="studentsChart" height="120"></canvas>
+        </section>
+
+        <!-- Risks -->
+        <section id="risks" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-[#005eb8] mb-6">⚠️ Risks with AI</h2>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white shadow-lg p-6 rounded-xl">
+                    <h3 class="font-bold">Bias & Opacity</h3>
+                    <p>Models may embed hidden bias or operate as black boxes, limiting explainability.</p>
+                </div>
+                <div class="bg-white shadow-lg p-6 rounded-xl">
+                    <h3 class="font-bold">Cyber & Regulation</h3>
+                    <p>AI introduces new attack surfaces and increases compliance challenges (GDPR, ASIC).</p>
+                </div>
+            </div>
+            <p>Mitigation requires rigorous controls, documentation, and ethical oversight.</p>
+            <canvas id="risksChart" height="120"></canvas>
+        </section>
+
+        <!-- Backlash -->
+        <section id="backlash" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-[#005eb8] mb-6">🚫 Backlash & Mitigations</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-4 rounded-xl shadow">Employee pushback → Training & re-skilling.</div>
+                <div class="bg-white p-4 rounded-xl shadow">Client mistrust → Transparent reporting & ethics.</div>
+                <div class="bg-white p-4 rounded-xl shadow">Regulator scrutiny → Compliance & assurance tools.</div>
+            </div>
+            <p class="mt-4">Industry backlash is real but surmountable when firms proactively engage stakeholders
+                and
+                embed ethical safeguards.</p>
+        </section>
+
+        <!-- CFO -->
+        <section id="cfo" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-[#005eb8] mb-6">💼 CFO Takeaways</h2>
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+                <div class="bg-white p-4 rounded-xl shadow">AI Platforms</div>
+                <div class="bg-white p-4 rounded-xl shadow">Accountants</div>
+                <div class="bg-white p-4 rounded-xl shadow">Governance</div>
+            </div>
+            <p>The CFO must balance efficiency with risk management. Strategic adoption of AI demands alignment
+                between
+                platforms, people, and governance. Only then can AI deliver lasting value.</p>
+            <canvas id="cfoChart" height="120"></canvas>
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Sidebar smooth scroll
+        document.querySelectorAll(".chain-item").forEach(item => {
+            item.addEventListener("click", () => {
+                document.getElementById(item.dataset.target).scrollIntoView({ behavior: "smooth" });
+            });
+        });
+
+        // Active nav highlight
+        const sections = document.querySelectorAll("section");
+        const chainItems = document.querySelectorAll(".chain-item");
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                if (pageYOffset >= section.offsetTop - 120) current = section.id;
+            });
+            chainItems.forEach(item => {
+                item.classList.remove("active-link");
+                if (item.dataset.target === current) item.classList.add("active-link");
+            });
+        });
+
+        // === Charts ===
+        new Chart(document.getElementById('impactChart'), {
+            type: 'bar',
+            data: {
+                labels: ["Variance", "Budgets", "KPIs"],
+                datasets: [
+                    { label: "Before AI", data: [80, 90, 85], backgroundColor: "#005eb8" },
+                    { label: "After AI", data: [40, 30, 25], backgroundColor: "#009999" }
+                ]
+            }
+        });
+
+        new Chart(document.getElementById('criticalEvalChart'), {
+            type: 'bar',
+            data: {
+                labels: ["Data Quality", "Transparency", "Oversight", "Change Mgmt"],
+                datasets: [
+                    { label: "Success Drivers", data: [80, 70, 85, 75], backgroundColor: "#005eb8" },
+                    { label: "Failure Risks", data: [20, 50, 15, 30], backgroundColor: "#ff8c00" }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Comparing Conditions for Success vs Failure in AI Adoption' }
+                },
+                scales: { y: { beginAtZero: true, max: 100 } }
+            }
+        });
+
+        // 🚀 NEW Role Timeline Chart
+        new Chart(document.getElementById('roleTimelineChart'), {
+            type: 'line',
+            data: {
+                labels: ["1980", "1990", "2000", "2010", "2020", "2025", "2030"],
+                datasets: [{
+                    label: "Role Significance",
+                    data: [10, 20, 30, 45, 70, 85, 95],
+                    fill: false,
+                    borderColor: "#009999",
+                    borderWidth: 3,
+                    tension: 0.3,
+                    pointBackgroundColor: ["#ff0000", "#ffaa00", "#005eb8", "#009999", "#ff8c00", "#00cc88", "#0066ff"],
+                    pointRadius: 6,
+                    pointHoverRadius: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                interaction: { mode: 'nearest', intersect: false },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                const milestones = {
+                                    "1980": "Manual reporting & bookkeeping",
+                                    "1990": "Early spreadsheets for variance analysis",
+                                    "2000": "ERP adoption streamlines reporting",
+                                    "2010": "Cloud accounting & BI dashboards",
+                                    "2020": "AI forecasting enters mainstream",
+                                    "2025": "AI-augmented decision support",
+                                    "2030": "Strategic ethics & storytelling central"
+                                };
+                                return milestones[context.label] || context.raw;
+                            }
+                        }
+                    },
+                    title: { display: true, text: "From Transactional → Strategic: Noisy but Exponential Growth" }
+                },
+                scales: {
+                    x: { title: { display: true, text: "Year" } },
+                    y: {
+                        title: { display: true, text: "Strategic Impact" },
+                        min: 0, max: 100, ticks: { stepSize: 20 }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('studentsChart'), {
+            type: 'line',
+            data: {
+                labels: ["Q4 2025", "Q1 2026", "Q2 2026"],
+                datasets: [
+                    { label: "Milestones", data: [1, 2, 3], borderColor: "#009999", fill: false, tension: 0.3 }
+                ]
+            }
+        });
+
+        new Chart(document.getElementById('risksChart'), {
+            type: 'pie',
+            data: {
+                labels: ["Bias", "Opacity", "Cybersecurity", "Other"],
+                datasets: [{ data: [35, 30, 25, 10], backgroundColor: ["#005eb8", "#009999", "#ff8c00", "#aaaaaa"] }]
+            }
+        });
+
+        new Chart(document.getElementById('cfoChart'), {
+            type: 'bar',
+            data: {
+                labels: ["Efficiency", "Insights", "Risk Mgmt", "Ethics"],
+                datasets: [{ label: "Priority Score", data: [90, 75, 80, 70], backgroundColor: "#005eb8" }]
+            }
+        });
+    </script>
+
+</body>
+
+</html>
